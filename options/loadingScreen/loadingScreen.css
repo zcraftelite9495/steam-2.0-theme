@@ -1,0 +1,89 @@
+/* Loading Screen */
+#loading-div {
+    z-index: 9999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(var(--background));
+}
+
+.radial-loader {
+    width: 54px;
+    height: 54px;
+    border: 8px solid rgba(var(--color-2));
+    border-top: 8px solid rgb(var(--accent-1));
+    border-radius: 50%;
+    animation: spin .6s linear infinite;
+}
+
+.loading-text {
+    opacity: .7;
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* New style for the secondary text */
+.loading-subtext {
+    opacity: .7;
+    margin-top: 10px;
+    font-size: 18px; /* Smaller font size */
+    font-weight: 400; /* Slightly lighter weight */
+    color: #fff;
+}
+
+/* Intro Screen */
+#intro-div {
+    z-index: 9998;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(var(--background));
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+.intro-text {
+    font-size: 48px; /* Big text size */
+    font-weight: 600;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 2s;
+}
+
+#intro-div.fade-in {
+    opacity: 1;
+}
+
+#intro-div.fade-in .intro-text {
+    opacity: 1;
+}
+
+#intro-div.fade-out {
+    opacity: 0;
+}
+
+#intro-div.fade-out .intro-text {
+    opacity: 0;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

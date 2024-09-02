@@ -1,0 +1,143 @@
+{
+    "Conditions": {
+        "Loading Screen Configuration": {
+            "description": "Configures the loading screen that is shown when your Steam client starts. Disabling may allow steam to load faster.",
+            "default": "Enabled - Default",
+            "values": {
+                "Enabled - Default": {
+                    "TargetCss": { "affects": [".*"], "src": "options/loadingScreen/loadingScreen.css" },
+                    "TargetJs": { "affects": [".*"], "src": "options/loadingScreen/loadingDuel.js" }
+                },
+                "Enabled - Splash Screen Only": {
+                    "TargetCss": { "affects": [".*"], "src": "options/loadingScreen/loadingScreen.css" },
+                    "TargetJs": { "affects": [".*"], "src": "options/loadingScreen/loadingSplash.js" }
+                },
+                "Enabled - Loading Screen Only": {
+                    "TargetCss": { "affects": [".*"], "src": "options/loadingScreen/loadingScreen.css" },
+                    "TargetJs": { "affects": [".*"], "src": "options/loadingScreen/loadingMain.js" }
+                },
+                "Disabled": {}
+            }
+        },
+        "Use System Accent Colors (Windows 10+)": {
+            "description": "Replaces the SpaceTheme accent colors with your system accent colors",
+            "default": "no",
+            "values": {
+                "no": {},
+                "yes": {
+                    "TargetCss": { "affects": [".*"], "src": "options/systemAccent.css" }
+                }
+            }
+        },
+        "What's New Customization": {
+            "description": "Customize the What's New section",
+            "default": "Compact",
+            "values": {
+                "Show": {},
+                "Compact": {
+                    "TargetCss": { "affects": ["^Steam$"], "src": "options/whatsNew/compact.css" }
+                },
+                "Hide": {
+                    "TargetCss": { "affects": ["^Steam$"], "src": "options/whatsNew/hide.css" }
+                }
+            }
+        },
+        "Add shelf button visibility": {
+            "description": "Hide Add shelf button in Library",
+            "default": "no",
+            "values": {
+                "no": {},
+                "yes": {
+                    "TargetCss": { "affects": ["^Steam$"], "src": "options/addShelfVisibility.css" }
+                }
+            }
+        },
+        "Game cover shiny effect visibility": {
+            "description": "Hide shiny effect on game covers",
+            "default": "no",
+            "values": {
+                "no": {},
+                "yes": {
+                    "TargetCss": { "affects": ["^Steam$"], "src": "options/shinyEffectVisibility.css" }
+                }
+            }
+        },
+        "Gamepage sidebar on left": {
+            "description": "Changes the sidebar on the game page from right to left",
+            "default": "no",
+            "values": {
+                "no": {},
+                "yes": {
+                    "TargetCss": { "affects": ["^Stem$"], "src": "options/gamepageSidebarLeft.css" }
+                }
+            }
+        },
+        "Wallet visibility": {
+            "description": "Hide wallet balance",
+            "default": "no",
+            "values": {
+                "no": {
+                    "TargetCss": { "affects": ["^Steam$"], "src": "options/walletVisibility.css" }
+                },
+                "yes": {}
+            }
+        },
+        "VAC-Ban visibility": {
+            "description": "Hide the VAC ban from your profile or on all profiles (currently not working)",
+            "default": "Show",
+            "values": {
+                "Show": {},
+                "For me": {
+                    "TargetCss": { "affects": ["https://steamcommunity.com"], "src": "options/VACBanVisibility/me.css" }
+                },
+                "For all": {
+                    "TargetCss": { "affects": ["https://steamcommunity.com"], "src": "options/VACBanVisibility/all.css" }
+                }
+            }
+        },
+        "Allow use of expirimental features": {
+            "description": "Enables the use of Expirimental Features within Steam 2.0.",
+            "default": "yes",
+            "values": {
+                "no": {},
+                "yes": {}
+            }
+        },
+        "In-Sidebar (expirimental)": {
+            "description": "Displays the account area, buttons, and download bar in the game sidebar.",
+            "default": "no",
+            "values": {
+                "no": {},
+                "yes": {
+                    "TargetCss": { "affects": ["^Steam$"], "src": "options/in-sidebar.css" },
+                    "TargetJs": { "affects": ["^Steam$"], "src": "options/in-sidebar.js" }
+                }
+            }
+        }
+    },
+    "Patches": [
+        {
+            "MatchRegexString": "Supernav$",
+            "TargetCss": "menu.custom.css",
+            "TargetJs": "menu.custom.js"
+        },
+        {
+            "MatchRegexString": "Menu$",
+            "TargetCss": "menu.custom.css",
+            "TargetJs": "menu.custom.js"
+        }
+    ],
+    "RootColors": "./src/css/root.css",
+    "Steam-WebKit": "webkit.css",
+    "UseDefaultPatches": true,
+    "author": "ZcraftElite",
+    "description": "Zcraftelite's Upgraded Steam Theme based off of SpaceTheme by SpaceEnergy.",
+    "discord_support": { "inviteCodeExcludingLink": "7Zv8Xz3Vzn" },
+    "github": {
+        "owner": "ZcraftElite9495",
+        "repo_name": "Steam-2.0-skin"
+    },
+    "name": "ZcraftElite's Steam 2.0",
+    "tags": [ "Modular", "Dark", "Customizable", "alpha" ],
+    "version": "1.2.1"
+}
